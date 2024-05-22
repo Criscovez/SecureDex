@@ -21,6 +21,7 @@
 		2470A6772BF9684B007ADA51 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2470A6762BF9684B007ADA51 /* Kingfisher */; };
 		2470A6792BFBFFB9007ADA51 /* SSLPinningSecureURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2470A6782BFBFFB9007ADA51 /* SSLPinningSecureURLSession.swift */; };
 		2470A67B2BFC0084007ADA51 /* SSLPinningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2470A67A2BFC0084007ADA51 /* SSLPinningDelegate.swift */; };
+		2470A67D2BFE4B33007ADA51 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2470A67C2BFE4B33007ADA51 /* Crypto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		2470A6732BF96808007ADA51 /* PokemonsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonsRowView.swift; sourceTree = "<group>"; };
 		2470A6782BFBFFB9007ADA51 /* SSLPinningSecureURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLPinningSecureURLSession.swift; sourceTree = "<group>"; };
 		2470A67A2BFC0084007ADA51 /* SSLPinningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLPinningDelegate.swift; sourceTree = "<group>"; };
+		2470A67C2BFE4B33007ADA51 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				2470A6662BF95AF9007ADA51 /* BaseNetwork.swift */,
 				2470A6782BFBFFB9007ADA51 /* SSLPinningSecureURLSession.swift */,
 				2470A67A2BFC0084007ADA51 /* SSLPinningDelegate.swift */,
+				2470A67C2BFE4B33007ADA51 /* Crypto.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				2470A6792BFBFFB9007ADA51 /* SSLPinningSecureURLSession.swift in Sources */,
 				2470A6722BF95EC1007ADA51 /* PokemonsViewModel.swift in Sources */,
 				2470A6672BF95AF9007ADA51 /* BaseNetwork.swift in Sources */,
+				2470A67D2BFE4B33007ADA51 /* Crypto.swift in Sources */,
 				2470A67B2BFC0084007ADA51 /* SSLPinningDelegate.swift in Sources */,
 				2470A63C2BF80A12007ADA51 /* SecureDexApp.swift in Sources */,
 				2470A66B2BF95DCA007ADA51 /* PokemonModel.swift in Sources */,

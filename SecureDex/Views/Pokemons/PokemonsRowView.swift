@@ -14,32 +14,35 @@ struct PokemonsRowView: View {
     var body: some View {
 
             
-            VStack{
+            HStack{
 
                 KFImage.url(pokemon.imageUrl)
                     .placeholder({
                         Image("pokeball")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .cornerRadius(10)
-                            .padding([.leading, .trailing],20)
-                            .opacity(0.6)
+                        
+                      
                     })
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .cornerRadius(10)
-                    .padding([.leading, .trailing],20)
-                    .opacity(0.8)
-                    .id(0)
                 
-                Text(pokemon.name)
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    .foregroundStyle(.gray)
-                    .bold()
-                    .id(1)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 150, height: 150)
+                    //.cornerRadius(30)
+                    .padding([.leading, .trailing],10)
+                    .opacity(0.8)
+                    
+              
+                    Text(pokemon.name)
+                    .font(.title2)
+                        .foregroundStyle(.gray)
+                        .bold()
+                        
+              
         }
+            
     }
+    
 }
+
 
 #Preview {
     PokemonsRowView(pokemon: Pokemon(name: "Monstruo", url: "https://pokeapi.co/api/v2/pokemon/1/"))

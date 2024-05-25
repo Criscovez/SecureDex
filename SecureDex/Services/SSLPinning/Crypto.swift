@@ -25,13 +25,17 @@ class Crypto {
     
     // MARK: Init
     init() {
-        let keyData: [UInt8] = [0xB2-0x42,0x56+0x0B,0x5B+0x18,0x86-0x13]
-        guard let unwrappedKey = String(data: Data(keyData), encoding: .utf8) else {
+        //print("clave: \(desofuscarString("Cristian", clave: "cla"))")
+        //let keyData: [UInt8] = [0xB2-0x42,0x56+0x0B,0x5B+0x18,0x86-0x13]
+        //guard let unwrappedKey = String(data: Data(keyData), encoding: .utf8) else {
+            guard let unwrappedKey = key("2*∑∑") else {
             print("SSLPinning error: unable to obtain local public key")
             return
         }
         self.key = unwrappedKey
     }
+    
+
     
     // MARK: Functions
     /// Pads a given key to be used in AES encryption with 32 bytes long by default. It uses the PKCS7 standard padding.
@@ -70,7 +74,7 @@ class Crypto {
             // Return the combination of the nonce, cypher text and tag
             return sealed.combined!
         } catch let er {
-            return "Error while encryption".data(using: .utf8)!
+            return "Error while encryption \(er)".data(using: .utf8)!
         }
     }
     //: ## Función de desencriptación AES-GCM
@@ -114,5 +118,28 @@ class Crypto {
         }
         let data = decrypt(input: sealedDataBoxData, key: self.key)
         return String(data: data, encoding: .utf8)
+    }
+    
+    func key(_ texto: String) -> String? {
+        let letras = Array("abcdefghijklmnopqrstuvwxyz")
+        let numeros = Array("*?#!$_-+¨{}[];123@∑€®†¥¨ø")
+        
+        var mapaLetrasANumeros = [Character: Character]()
+        
+        for (numero, letra) in zip(numeros, letras) {
+            mapaLetrasANumeros[numero] = letra
+        }
+        
+        var textoNumeros = ""
+        
+        for caracter in texto.lowercased() {
+            if let letra = mapaLetrasANumeros[caracter] {
+                textoNumeros.append(String(letra))
+            } else {
+                textoNumeros.append(String(caracter))
+            }
+        }
+        
+        return textoNumeros
     }
 }

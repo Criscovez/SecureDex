@@ -7,7 +7,7 @@
 
 import Foundation
 
-let host = "pokeapi.co"
+let host = "fwG6cq2JANAR6IgG95pgpNWPEcFfaddyufIJ6FR9CP9Yzgxebao="
 
 struct HTTPMethods {
     static let get = "GET"
@@ -15,7 +15,8 @@ struct HTTPMethods {
 }
 
 enum endpoints: String {
-    case pokemons = "/api/v2/pokemon"
+    case pokemons = "Sw+ubCULe5r7OC5dB0NzP4Rvy0Q8Qj8bzhE0V3MpVdAH/LYYWdpvvmyMOw=="
+    case pokeImage = "kAqCbffySlx1Ogjocx40SMnncR6xuqsQRYA/pPCa5PbdA/8UwHq8SIcaFNjvlH9xYULQMKtkkVhflXqnqFjaIYCbGN8RvDjEP5rzE8/uJc3En/aYqulHZ+W+HXCMaIZHEWwBkQk="
 }
 
 //Server Response Codes
@@ -33,8 +34,9 @@ struct BaseNetwork{
     func getSessionPokemon() -> URLRequest {
         var components = URLComponents()
         components.scheme = "https"
-        components.host = host
-        components.path = endpoints.pokemons.rawValue
+        let decryptedHost = Crypto().getDecryptedURL(URLString: host)
+        components.host = decryptedHost
+        components.path = Crypto().getDecryptedURL(URLString: endpoints.pokemons.rawValue) ?? ""
         
         components.queryItems = [
             URLQueryItem(name: "limit", value: "151")

@@ -57,13 +57,14 @@ extension SSLPinningDelegate: URLSessionDelegate {
         //Imprimir las claves
         print()
         print()
-        print("Local crypto key is \(Crypto().getDecryptedPublicKey())")
+        print("Local crypto key is \(String(describing: Crypto().getDecryptedPublicKey()))")
         print("Server key is \(serverHashbase64)")
         
-        let crypto = Crypto()
+       // let crypto = Crypto()
         
         // Comprobar que la clave pública local es igual que la del servidor
         if serverHashbase64 == Crypto().getDecryptedPublicKey() {
+        //if serverHashbase64 == serverHashbase64 {
             completionHandler(.useCredential, URLCredential(trust: serverTrust))
             print("SSLPining filter passed")
         } else {

@@ -9,15 +9,13 @@ import SwiftUI
 import Kingfisher
 
 struct PokemonsRowView: View {
-    //var hero: HeroeResult //el modelo
     var pokemon: Pokemon //el modelo
     
     var body: some View {
 
             
             VStack{
-                
-                
+
                 KFImage.url(pokemon.imageUrl)
                     .placeholder({
                         Image("pokeball")
@@ -39,16 +37,11 @@ struct PokemonsRowView: View {
                     .foregroundStyle(.gray)
                     .bold()
                     .id(1)
-                
-            
         }
     }
 }
 
+#Preview {
+    PokemonsRowView(pokemon: Pokemon(name: "Monstruo", url: "https://pokeapi.co/api/v2/pokemon/1/"))
 
-//#Preview {
-//
-//
-//    HerosRowView(hero: MockTest().MockHeroRow)
-//
-//}
+}

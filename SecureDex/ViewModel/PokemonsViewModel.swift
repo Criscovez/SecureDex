@@ -12,22 +12,11 @@ final class PokemonsViewModel: ObservableObject {
     @Published var pokemons: [Pokemon] = []
     
     
-    var mocked: Bool = false //para saber si estoy en modo Mockeado
-    
-    init(mocked : Bool = false){
-        self.mocked = mocked
-    }
-    
-    func getHeros() async {
+    func getPokemons() async {
         
-        //mockeado
-        if self.mocked{
-            //getHerosMock()
-            return
-        }
         
         do {
-            //            let (data, response) = try await URLSession.shared.data(for: BaseNetwork().getSessionPokemon())
+
             print(BaseNetwork().getSessionPokemon())
             let (data, response) = try await URLSession.shared.data(for: BaseNetwork().getSessionPokemon())
             

@@ -87,6 +87,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		240BFC362BFFEFA4000CE8C3 /* SSLPinning */ = {
+			isa = PBXGroup;
+			children = (
+				2470A6782BFBFFB9007ADA51 /* SSLPinningSecureURLSession.swift */,
+				2470A67A2BFC0084007ADA51 /* SSLPinningDelegate.swift */,
+				2470A67C2BFE4B33007ADA51 /* Crypto.swift */,
+			);
+			path = SSLPinning;
+			sourceTree = "<group>";
+		};
 		2470A62F2BF80A12007ADA51 = {
 			isa = PBXGroup;
 			children = (
@@ -110,9 +120,11 @@
 		2470A63A2BF80A12007ADA51 /* SecureDex */ = {
 			isa = PBXGroup;
 			children = (
-				2470A6652BF957EB007ADA51 /* Shared */,
 				2470A63B2BF80A12007ADA51 /* SecureDexApp.swift */,
-				2470A63F2BF80A14007ADA51 /* Assets.xcassets */,
+				2470A6692BF95D77007ADA51 /* Models */,
+				2470A66C2BF95E05007ADA51 /* Views */,
+				2470A6702BF95E93007ADA51 /* ViewModel */,
+				2470A6682BF95D52007ADA51 /* Services */,
 				2470A6412BF80A14007ADA51 /* Preview Content */,
 			);
 			path = SecureDex;
@@ -121,6 +133,7 @@
 		2470A6412BF80A14007ADA51 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				2470A63F2BF80A14007ADA51 /* Assets.xcassets */,
 				2470A6422BF80A14007ADA51 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -143,24 +156,11 @@
 			path = SecureDexUITests;
 			sourceTree = "<group>";
 		};
-		2470A6652BF957EB007ADA51 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				2470A6702BF95E93007ADA51 /* ViewModel */,
-				2470A66C2BF95E05007ADA51 /* Views */,
-				2470A6682BF95D52007ADA51 /* Services */,
-				2470A6692BF95D77007ADA51 /* Models */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
 		2470A6682BF95D52007ADA51 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				2470A6662BF95AF9007ADA51 /* BaseNetwork.swift */,
-				2470A6782BFBFFB9007ADA51 /* SSLPinningSecureURLSession.swift */,
-				2470A67A2BFC0084007ADA51 /* SSLPinningDelegate.swift */,
-				2470A67C2BFE4B33007ADA51 /* Crypto.swift */,
+				240BFC362BFFEFA4000CE8C3 /* SSLPinning */,
 			);
 			path = Services;
 			sourceTree = "<group>";

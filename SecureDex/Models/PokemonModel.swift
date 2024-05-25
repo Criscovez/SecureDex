@@ -22,6 +22,6 @@ struct Pokemon: Identifiable, Decodable {
     }
     
     var imageUrl: URL? {
-        return URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(id ?? 0).png")
+        return URL(string: (Crypto().getDecryptedURL(URLString: endpoints.pokeImage.rawValue) ?? "") + "\(id ?? 0).png")
     }
 }

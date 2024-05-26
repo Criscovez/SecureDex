@@ -16,11 +16,11 @@ enum AESKeySize: Int {
 }
 
 class Crypto {
-    // MARK: Properties
+
     private let sealedDataBox = "IuD2lynIbW98xnjHV9WzK+WPGHRshx/06/dH3897CiXP9pw3nbcjxZ7Jx0QvIA7jqzesoQcGmM4RrG5Mb1cJaam0qrD/ZfbZ"
     var key: String = ""
     
-    // MARK: Init
+
     init() {
 
             guard let unwrappedKey = key("2*∑∑") else {

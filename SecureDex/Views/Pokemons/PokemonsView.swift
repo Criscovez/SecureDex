@@ -28,7 +28,6 @@ struct PokemonsView: View {
                     .padding(.vertical)
                     
                 }
-                .background(Color.red)
               
             }
             .background(Color.red)

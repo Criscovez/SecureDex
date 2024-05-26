@@ -20,8 +20,9 @@ struct PokemonsView: View {
                     
                 List{
                     ForEach(viewModel.pokemons){data in
-                        
-                        PokemonsRowView(pokemon: data)
+                        NavigationLink(destination: PokemonDetailView(pokemon: data)) {
+                            PokemonsRowView(pokemon: data)
+                        }
                         
                     }
                     .padding(.vertical)

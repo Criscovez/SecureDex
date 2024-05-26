@@ -25,3 +25,24 @@ struct Pokemon: Identifiable, Decodable {
         return URL(string: (Crypto().getDecryptedURL(URLString: endpoints.pokeImage.rawValue) ?? "") + "\(id ?? 0).png")
     }
 }
+
+struct PokemonDetail: Identifiable, Decodable {
+    let abilities: [Ability]
+    
+    let id: Int
+
+
+
+}
+
+// MARK: - Ability
+struct Ability: Codable {
+    let ability: Species
+
+}
+
+// MARK: - Species
+struct Species: Codable, Hashable {
+    let name: String
+    let url: String
+}

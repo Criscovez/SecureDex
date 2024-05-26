@@ -10,7 +10,7 @@ import CommonCrypto
 import CryptoKit
 
 class SSLPinningDelegate: NSObject  {
-   //private var localPublicKeyHashBase64 = "XM/zPZlyGRsb47ZGBJvaZGYVjQvjOrF6u5A5sxyDakk="
+ 
 }
 
 //MARK: - URLPinningDelegate: functions

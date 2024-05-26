@@ -17,6 +17,7 @@ struct HTTPMethods {
 enum endpoints: String {
     case pokemons = "Sw+ubCULe5r7OC5dB0NzP4Rvy0Q8Qj8bzhE0V3MpVdAH/LYYWdpvvmyMOw=="
     case pokeImage = "kAqCbffySlx1Ogjocx40SMnncR6xuqsQRYA/pPCa5PbdA/8UwHq8SIcaFNjvlH9xYULQMKtkkVhflXqnqFjaIYCbGN8RvDjEP5rzE8/uJc3En/aYqulHZ+W+HXCMaIZHEWwBkQk="
+    case pokeAbilities = "UJ+Cipr9Zl6xn1qk29Mhbv3tZwm38zU6yMGL9wgtKgeumU4nEfnWJY6jU3o="
 }
 
 //Server Response Codes
@@ -41,6 +42,22 @@ struct BaseNetwork{
         components.queryItems = [
             URLQueryItem(name: "limit", value: "151")
         ]
+
+        var request = URLRequest(url: URL(string: components.string!)!)
+        
+        request.httpMethod = HTTPMethods.get
+
+        return request
+    }
+    
+    func getSessionAbilities(id: String) -> URLRequest {
+        var components = URLComponents()
+        components.scheme = "https"
+        let decryptedHost = Crypto().getDecryptedURL(URLString: host)
+        components.host = decryptedHost
+        components.path = (Crypto().getDecryptedURL(URLString: endpoints.pokeAbilities.rawValue) ?? "") + id
+        
+  
 
         var request = URLRequest(url: URL(string: components.string!)!)
         
